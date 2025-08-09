@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Route Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ByteTrip: Code your route, Byte your trip.</h1>
+        <form method="POST">
+            <label>From:</label>
+            <select name="start" required>
+                {% for district in districts %}
+                    <option value="{{ district }}">{{ district }}</option>
+                {% endfor %}
+            </select>
+
+            <label>To:</label>
+            <select name="end" required>
+                {% for district in districts %}
+                    <option value="{{ district }}">{{ district }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Choose Option:</label>
+            <select name="choice" required>
+                <option value="1">Cheapest path</option>
+                <option value="2">Shortest distance</option>
+                <option value="3">Shortest time</option>
+            </select>
+
+            <button type="submit">Find Route</button>
+        </form>
+    </div>
+</body>
+</html>

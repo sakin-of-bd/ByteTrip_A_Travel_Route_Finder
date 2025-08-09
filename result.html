@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Route Result</h1>
+        <p class="result">{{ output }}</p>
+        <p class="path">Path: {{ " → ".join(path) }}</p>
+        <a href="/" class="back-btn">Search Again</a>
+    </div>
+</body>
+</html>
